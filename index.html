@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Kumar</title>
+    <style>
+        /* Global Styles & Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Top Navigation Bar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .navbar .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0f4c81;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #0f4c81;
+        }
+
+        /* UPDATED: Full Background Image Hero Section */
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            /* Replace the URL in url() below to change your background image */
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            /* Parallax effect */
+            color: #ffffff;
+            padding: 120px 20px 60px 20px;
+            text-align: center;
+        }
+
+        .hero-text {
+            max-width: 800px;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-text p {
+            font-size: 1.6rem;
+            color: #e2e8f0;
+            margin-bottom: 35px;
+            font-weight: 400;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-hero {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #0f4c81;
+            padding: 14px 35px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-hero:hover {
+            background-color: #0f4c81;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Generic Section Layouts */
+        section {
+            padding: 100px 20px 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #0f4c81;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        .about-desc {
+            font-size: 1.15rem;
+            color: #4a5568;
+            max-width: 850px;
+        }
+
+        /* Publications & Projects Cards */
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            border-left: 5px solid #0f4c81;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            color: #1a202c;
+            margin-bottom: 8px;
+        }
+
+        .card-meta {
+            font-size: 0.95rem;
+            color: #718096;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        /* Skills Tags */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background-color: #e2e8f0;
+            color: #2d3748;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        #contact {
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #1a202c;
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-text p {
+                font-size: 1.3rem;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Raj Kumar</a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <!-- <li><a href="#publications">Publications</a></li> -->
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Full Background Image Hero Section -->
+    <div class="hero-container">
+        <div class="hero-text">
+            <h1>Raj Kumar</h1>
+            <p>Statistical & Quantitative Researcher</p>
+            <!-- <a href="#publications" class="btn-hero">Explore Research</a> -->
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="about-desc">
+            I am a student pursuing B.Sc.(Hons.)Statistics from Sri venkateshwara College (University of Delhi). It is a pleasure to be a part of this college, as its faculty provides both theoretical and practical knowledge of the subjects. The mentors are very helpful and offer numerous opportunities to students. One such opportunity was being a volunteer on a research trip to Chakrata.
+        </p>
+    </section>
+
+    <!-- Publications Section -->
+    <!-- <section id="publications">
+        <h2 class="section-title">Publications & Working Papers</h2>
+
+        <div class="card">
+            <h3 class="card-title">Analysis of Advanced Dispersion and Mathematical Frameworks in Modern Analytics</h3>
+            <div class="card-meta">Working Paper / Pre-print (2026)</div>
+            <p>An in-depth evaluation of mathematical properties governing dispersion, examining theoretical variations
+                and structural efficiencies in applied computational environments.</p>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">Applying Predictive Statistical Models to Financial Data Streams</h3>
+            <div class="card-meta">Target Journal: Journal of Quantitative Analysis (Forthcoming)</div>
+            <p>Explores structural data-cleaning methodologies and predictive optimization to maximize computational
+                accuracy and efficiency in high-frequency data pipelines.</p>
+        </div>
+    </section> -->
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Research & Technical Projects</h2>
+
+        <div class="card">
+            <h3 class="card-title">Volunteer Research Assistant — Chakrata Environmental Survey Trip(29 Jan - 31 Jan)
+            </h3>
+            <div class="card-meta">Environmental data collection, AQI measurement, field surveying, data recording</div>
+            <p>Assisted in field collection of air quality and environmental metrics across multiple locations during a
+                3-day survey project</p>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">Surface Temperature Analysis & Modelling</h3>
+            <div class="card-meta">Python, Pandas, NumPy, Matplotlib, Seaborn</div>
+            <p>Developed surface temperature models and generated analytical graphs using Python libraries for
+                environmental data interpretation</p>
+            <p style="color: #73f805; font-size: 12px; font-weight: 300; margin: 0">Paper yet to be published</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">Skills & Methodologies</h2>
+        <div class="skills-container">
+            <span class="skill-tag">Statistical Modeling</span>
+            <span class="skill-tag">Quantitative Research</span>
+            <span class="skill-tag">Python (NumPy, Pandas)</span>
+            <span class="skill-tag">Data Visualization (Seaborn, Matplotlib)</span>
+            <span class="skill-tag">Tableau Analytics</span>
+            <span class="skill-tag">Linear Algebra & Matrix Calculus</span>
+            <span class="skill-tag">Statistics and Probability</span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="card" style="border-left-color: #2d3748;">
+            <p><strong>Personal Email:</strong><a href="mailto:rajectory@gmail.com">rajectory@gmail.com</a></p>
+            <p><strong>Work Email:</strong><a href="mailto:1925002@svc.du.ac.in">1925002@svc.du.ac.in</a></p>
+            <p><strong>Location:</strong> Delhi NCR, India</p>
+            <p><strong>LinkedIn:</strong><a href="www.linkedin.com/in/rajectory">linkedin.com/in/rajectory</a></p>
+        </div>
+    </section>
+</body>
+
+</html>
